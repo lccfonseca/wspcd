@@ -3,7 +3,7 @@
 class Settings():
     sgbd: str = "mysql"
     connector: str = "mysqlconnector"
-    db_host: str = "10.101.43.128"
+    db_host: str = "10.101.51.82"
     db_port: str = "3306"
     db_name: str = "pcd"
     db_user: str = "aluno"
