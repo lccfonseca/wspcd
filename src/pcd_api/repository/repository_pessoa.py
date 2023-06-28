@@ -3,7 +3,7 @@ from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
 from pcd_api.core.config import Settings as st
-from pcd_api.model.pessoa import pessoa
+from pcd_api.model.pessoa import Pessoa
 
 
 def list_pessoas(db: Session):
