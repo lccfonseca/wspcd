@@ -1,8 +1,6 @@
 from fastapi import APIRouter
 
-from pcd_api.api.v1.endpoints import deficiencia
-from pcd_api.api.v1.endpoints import pessoa
-
+from pcd_api.api.v1.endpoints import deficiencia, pessoa
 
 api_router = APIRouter()
 

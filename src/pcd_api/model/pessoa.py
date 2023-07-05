@@ -7,10 +7,9 @@ class Pessoa(Base):
 
     id = Column(Integer, primary_key = True, index = True)
     nome = Column(String(60))
-    cpf = Column(Integer, primary_key = True, index = True)
+    cpf = Column(Integer)
     email = Column(String(100))
     cid = Column(String(15))
     senha = Column(String(80))
     dt_cadastro = Column(String(10))
-    deficiencia_id = Column(Integer, primary_key = True, index = True)
-    
+    deficiencia_id = Column(Integer)
