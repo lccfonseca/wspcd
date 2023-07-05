@@ -3,7 +3,7 @@ from fastapi import Depends
 from sqlalchemy.orm import Session
 
 from pcd_api.db.init_db_mysql import get_db
-from pcd_api.repository.repository_pessoa import list_pessoas
+from pcd_api.repository.pessoa_repository import list_pessoas
 
 router = APIRouter()
 
