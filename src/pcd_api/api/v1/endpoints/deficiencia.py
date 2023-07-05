@@ -9,15 +9,12 @@ from pcd_api.schema.deficiencia import DeficienciaCreate, DeficienciaShow
 router = APIRouter()
 
 @router.get("/")
-async def list_all_health_insurer(db: Session = Depends(get_db)):
+async def list_all_deficiencia(db: Session = Depends(get_db)):
     try:        
-        health_insurer = list_deficiencias(db=db)
+        deficiencia = list_deficiencias(db=db)
     except Exception:
         raise HTTPException(status_code=500, detail="Erro ao buscar lista de deficiencias")
     else:
-<<<<<<< HEAD
-        return health_insurer
-=======
         return deficiencia
     
 @router.get("/{id}", response_model=DeficienciaShow)
@@ -47,4 +44,3 @@ async def delete_deficiencia(id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f"Deficiencia with id {id} not found")
     return {"msg":"Successfully deleted."}
->>>>>>> develop
