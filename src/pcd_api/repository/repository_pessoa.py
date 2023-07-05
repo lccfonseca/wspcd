@@ -28,7 +28,7 @@ def create_new_pessoa(pessoa: Pessoa, db: Session):
             with db:
                 try:
                     pessoa_obj = Pessoa(**pessoa.dict())
-                    db.add(deficiencia_obj)
+                    db.add(pessoa_obj)
                     db.commit()
                     db.refresh(pessoa_obj)
                     return pessoa_obj
