@@ -30,7 +30,7 @@ async def create_pessoa(pessoa: PessoaCreate, db: Session = Depends(get_db)):
 
 @router.put("/{id}")
 async def update_pessoa(id: int, pessoa:PessoaCreate, db: Session = Depends(get_db)):
-    updated = update_pessoa_by_id(id=id, deficiencia=pessoa, db=db)
+    updated = update_pessoa_by_id(id=id, pessoa=pessoa, db=db)
     if not updated:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                             detail=f"Pessoa with id {id} not found")
