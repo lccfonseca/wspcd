@@ -44,7 +44,7 @@ def update_pessoa_by_id(id: int, pessoa: Pessoa, db: Session):
             existing_pessoa = db.query(Pessoa).filter(Pessoa.id == id)
             if not existing_pessoa.first():
                 return 0
-            existing_pessoa.update(pessoa._dict_)
+            existing_pessoa.update(pessoa.__dict__)
             db.commit()
             return 1
         except Exception as err:
