@@ -9,6 +9,7 @@ class PessoaCreate(BaseModel):
     dt_cadastro: date
     senha:str
     cid:str
+    deficiencia_id:int
     
 class PessoaShow(BaseModel):
     id : int
@@ -16,7 +17,7 @@ class PessoaShow(BaseModel):
     cpf:int
     email:str
     dt_cadastro:date
-    pessoa_id:int
+    deficiencia_id:int
     cid:str
     senha:str
     class Config():  #tells pydantic to convert even non dict obj to json

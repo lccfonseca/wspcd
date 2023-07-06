@@ -3,7 +3,7 @@ from pcd_api.model.base import Base
 
 class Pessoa(Base):
     
-    _tablepessoa_ = "pessoa"
+    __tablename__ = "pessoa"
 
     id = Column(Integer, primary_key = True, index = True)
     nome = Column(String(100))
