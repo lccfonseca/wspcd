@@ -27,7 +27,7 @@ def retrieve_pessoa_by_id(id: int, db: Session):
 def create_new_pessoa(pessoa: Pessoa, db: Session):
     with db:
         try:
-            pessoa_obj = pessoa(**pessoa.dict())
+            pessoa_obj = Pessoa(**pessoa.dict())
             db.add(pessoa_obj)
             db.commit()
             db.refresh(pessoa_obj)
