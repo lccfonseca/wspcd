@@ -23,7 +23,7 @@ async def retrieve_pessoa(id:int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Pessoa with this id {id} does not exist")
     return pessoa
 
-@router.post("/", response_model=PessoaShow)
+@router.post("/")
 async def create_pessoa(pessoa: PessoaCreate, db: Session = Depends(get_db)):
     pessoa = create_new_pessoa(pessoa=pessoa, db=db)
     return pessoa
