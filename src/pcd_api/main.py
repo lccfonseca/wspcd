@@ -22,3 +22,4 @@ app.include_router(api_router, prefix=Settings.api_v1_str)
 @app.get("/", tags=["Root"])
 async def read_root():
     return {"mensagem": "WSPcd API!"}
+

@@ -9,12 +9,12 @@ from pcd_api.model.pessoa import Pessoa
 def list_pessoa(db: Session):
     with db:
         try:    
-            health_insurer = db.query(Pessoa).all()
-            return health_insurer
+            pessoa = db.query(Pessoa).all()
+            return pessoa
         except Exception as err:
             #logger.error(st.project_name+':::'+f"Erro na conexão com o Banco de Dados: " + str(err))
             return HTTPException(status_code = 500, detail = f"Erro na conexão com o Banco de Dados!")
-
+        
 def retrieve_pessoa_by_id(id: int, db: Session):
     with db:
         try:
@@ -36,7 +36,7 @@ def create_new_pessoa(pessoa: Pessoa, db: Session):
             #logger.exception(st.PROJECT_NAME+':::'+f"Erro na conexão com o Banco de Dados: " + str(err))
             return err
         
-def update_deficiencia_by_id(id:int, pessoa: Pessoa, db: Session):
+def update_pessoa_by_id(id:int, pessoa: Pessoa, db: Session):
     with db:
         try:
             existing_pessoa = db.query(Pessoa).filter(Pessoa.id == id)
@@ -49,7 +49,7 @@ def update_deficiencia_by_id(id:int, pessoa: Pessoa, db: Session):
             #logger.exception(st.PROJECT_NAME+':::'+f"Erro na conexão com o Banco de Dados: " + str(err))
             return err
         
-def delete_deficiencia_by_id(id: int, db: Session):
+def delete_pessoa_by_id(id: int, db: Session):
     with db:
         try:
             existing_pessoa = db.query(Pessoa).filter(Pessoa.id == id)
@@ -60,4 +60,4 @@ def delete_deficiencia_by_id(id: int, db: Session):
             return 1
         except Exception as err:
             #logger.exception(st.PROJECT_NAME+':::'+f"Erro na conexão com o Banco de Dados: " + str(err))
-            return err        
+            return err
